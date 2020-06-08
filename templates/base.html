@@ -7,8 +7,9 @@
 <body>
 <header>
     <a href="#">StopOver</a>
-    <form action="#">
-        <input type="text" id="search" name="search" placeholder="Find your ideal Festival Experience">
+    <form action="{% url 'main:index' %}" method="POST">
+        {% csrf_token %}
+        <input type="text" id="search" name="search" placeholder="Find your ideal Festival Experience" required>
        <button id="search-button">Search</button>
     </form>
 </header>
